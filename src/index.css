@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap");
+
+
+
+@import "tailwindcss";
+
+
+@theme inline{
+    --color-primary: #FF5200;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+
+
+    --font-inter: "Inter", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+}
+
+@layer components{
+
+    .icons{
+        @apply w-6 h-6 ;
+    }
+}
