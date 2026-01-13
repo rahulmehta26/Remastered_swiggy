@@ -18,7 +18,7 @@ interface ButtonProps extends HTMLMotionProps<"button"> {
 const variants = {
     primary: "bg-primary text-white text-shadow-xs font-bold font-inter rounded-2xl",
     secondary: "bg-muted text-primary text-shadow-xs font-bold font-inter rounded-2xl",
-    outline: "border-2 border-primary text-shadow-xs font-bold font-inter rounded-2xl bg-transparent text-primary",
+    outline: "border-1 border-primary text-shadow-xs font-bold font-inter rounded-2xl bg-transparent text-primary",
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -44,14 +44,19 @@ const Button: React.FC<ButtonProps> = ({
                 variants[variant],
                 className
             )}
-            whileHover={{
-                scale: 1.025
-            }}
+            initial="initial"
+            whileHover="hover"
             whileTap={{
-                scale: [1.025, 0.985, 1]
+                scale: [1.025, 0.985, 1],
+                transition: {
+                    duration: 0.5
+                }
             }}
             {...props}
         >
+
+            {LeftIcon && <LeftIcon className={cn(leftIconStyle)} />}
+
             <span
                 className={cn(
                     "text-base",
@@ -60,6 +65,8 @@ const Button: React.FC<ButtonProps> = ({
             >
                 {title}
             </span>
+
+            {RightIcon && <RightIcon className={cn(rightIconStyle)} />}
         </motion.button>
 
     );

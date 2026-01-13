@@ -3,6 +3,7 @@ import Swiggy from '../../assets/swiggy-white-bg.svg'
 import { cn } from '../../utils/cn'
 import Button from '../ui/Button'
 import { Link } from 'react-router-dom'
+import TiltArrow from '../icons/TiltArrow'
 
 const Header: React.FC = () => {
 
@@ -10,7 +11,6 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY);
       if (scrollY > 100) {
         setShow(true)
       } else {
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
 
       <header
         className={cn(
-          `w-305 mx-auto py-8 `,
+          `w-[76rem] mx-auto py-8 `,
           "flex justify-between items-center",
         )}
       >
@@ -87,8 +87,11 @@ const Header: React.FC = () => {
           <Button
             title="Get the App"
             variant='outline'
-            className='border-white'
+            className='border-white gap-2'
             textStyle='text-white'
+            rightIcon={TiltArrow}
+            rightIconStyle='text-white stroke-2 w-6 h-auto '
+
           />
           <Button
             title="Sign in"
