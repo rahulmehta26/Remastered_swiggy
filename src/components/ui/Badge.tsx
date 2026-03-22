@@ -4,12 +4,12 @@ import Text from './Text'
 interface BadgeProps {
     title: string;
     className?: string;
-    textStyle?: string
+    textStyle?: string;
 }
 
 const Badge = ({ title, className, textStyle }: BadgeProps) => {
     return (
-        <section
+        <div
             className={cn(
                 "w-fit rounded-full px-4 py-1",
                 "bg-linear-to-r from-primary/20 via-primary/10 to-primary/0",
@@ -25,7 +25,7 @@ const Badge = ({ title, className, textStyle }: BadgeProps) => {
                     title
                 }
             </Text>
-        </section>
+        </div>
     )
 }
 

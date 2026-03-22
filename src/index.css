@@ -1,29 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap");
-
-
 
 @import "tailwindcss";
 
+:root {
+  --color-primary-rgb: 255 82 0;
 
-@theme inline{
-    --color-primary: #FF5200;
-    --color-white: #FFFFFF;
-    --color-black: #000000;
-    --color-neutral-700: #414548;
-    --color-neutral-900: #161A1F;
+  --color-primary: rgb(var(--color-primary-rgb));
+  --color-primary-muted: rgb(var(--color-primary-rgb) / 0.5);
 
+  --color-white: #ffffff;
+  --color-muted-white: #ffffff5c;
+  --color-black: #000000;
+  --color-neutral-700: #414548;
+  --color-neutral-900: #161a1f;
+  --color-light-gray: #f0f0f5;
+  --color-muted: #616469;
 
-    --font-inter: "Inter", sans-serif;
-    --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
 
-    --radius-sm: 1rem;
-    --radius-md: 2rem
+  --radius: 0.5rem;
+  --radius-sm: 1rem;
+  --radius-md: 1.45rem;
+  --radius-lg: 1.8rem;
+  --radius-xl: 2rem;
 }
 
-@layer components{
+@theme {
+  --color-primary: rgb(var(--color-primary-rgb));
+  --color-muted-primary: var(--color-primary-muted);
+  --color-white: var(--color-white);
+  --color-muted-white: var(--color-muted-white);
+  --color-black: var(--color-black);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-light-gray: var(--color-light-gray);
+  --color-muted: var(--font-muted);
 
-    .icons{
-        @apply w-6 h-6 ;
-    }
+
+  --font-inter: var(--font-inter);
+  --font-poppins: var(--font-poppins);
+
+  --radius: var(--radius);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.1);
+
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 20px 25px rgba(0, 0, 0, 0.12);
+}
+
+@layer components {
+  .icons {
+    @apply size-6;
+  }
+
+  .page-container {
+    @apply w-[76rem] relative mx-auto;
+  }
+
+  .shadow-sm {
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shadow-md {
+    box-shadow: var(--shadow-md);
+  }
+
+  .shadow-lg {
+    box-shadow: var(--shadow-lg);
+  }
 }

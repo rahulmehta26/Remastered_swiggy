@@ -1,18 +1,28 @@
-import { motion } from "motion/react"
-import RightArrow from "../../components/icons/RightArrow"
 import Badge from "../../components/ui/Badge"
 import ServiceCard from "../../components/ui/ServiceCard"
 import Text from "../../components/ui/Text"
 import { cn } from "../../utils/cn"
+import ArrowButton from "../../components/ui/ArrowButton"
+import Service_Image01 from "../../assets/images/service_image01.png"
+import Service_Image02 from "../../assets/images/service_image02.png"
+import Service_Image03 from "../../assets/images/service_image03.png"
+import { useNavigate } from "react-router-dom"
 
 const ServiceCategories = () => {
+
+    const navigate = useNavigate();
     return (
         <section
             className={cn(
                 "grid grid-cols-12 gap-12"
             )}
         >
-            <ServiceCard className={cn("col-span-4 flex flex-col justify-between")} >
+            <ServiceCard
+                className={cn(
+                    "relative col-span-4",
+                    "flex flex-col justify-between",
+                )}
+            >
 
                 <div
                     className={cn(" space-y-2 ")}
@@ -39,25 +49,20 @@ const ServiceCategories = () => {
                 </div>
 
                 <div>
-                    <motion.button
-                        whileHover="hover"
-                        initial="initial"
-                        className={cn(
-                            "w-12 h-12",
-                            "bg-primary rounded-full",
-                            "flex justify-center items-center",
-                            "cursor-pointer"
-                        )}
-                        type="button"
-                    >
-                        <RightArrow className={cn("stroke-white stroke-2 size-8")} />
-
-                    </motion.button>
+                    <ArrowButton onClick={() => navigate("/restaurants")} />
                 </div>
+
+                <img
+                    src={Service_Image01}
+                    className={cn(
+                        "w-[15.5rem] h-auto",
+                        "absolute right-0 bottom-0 "
+                    )}
+                />
 
             </ServiceCard>
 
-            <ServiceCard className={cn("col-span-4")} >
+            <ServiceCard className={cn("relative col-span-4 flex flex-col justify-between")} >
 
                 <div
                     className={cn(" space-y-2 ")}
@@ -82,9 +87,21 @@ const ServiceCategories = () => {
                     <Badge title="UPTO 60% OFF" />
 
                 </div>
+
+                <div className="relative" >
+                    <ArrowButton />
+                </div>
+
+                <img
+                    src={Service_Image02}
+                    className={cn(
+                        "w-[10rem] h-auto",
+                        "absolute right-0 bottom-0 "
+                    )}
+                />
             </ServiceCard>
 
-            <ServiceCard className={cn("col-span-4")} >
+            <ServiceCard className={cn("relative col-span-4 flex flex-col justify-between")} >
 
                 <div
                     className={cn(" space-y-2 ")}
@@ -109,6 +126,19 @@ const ServiceCategories = () => {
                     <Badge title="UPTO 50% OFF" />
 
                 </div>
+
+                <div className="relative" >
+                    <ArrowButton />
+
+                </div>
+
+                <img
+                    src={Service_Image03}
+                    className={cn(
+                        "w-[12rem] h-auto",
+                        "absolute right-0 bottom-0 "
+                    )}
+                />
             </ServiceCard>
         </section>
     )
